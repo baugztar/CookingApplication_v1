@@ -1,0 +1,50 @@
+{
+  "recipe": [
+    {
+      "id":"1",
+      "name": "Sild og Poteter",
+      "ingredients": {
+        "contains": [
+          {"ing":"Sild"},
+          {"ing":"Poteter"}
+        ],
+        "portions": [
+          {"por":"2"}
+        ],
+        "amount":[
+          "200g",
+          "3stk"
+        ]
+      },
+      "difficulty": "lett",
+      "cooktime": "20",
+      "description":"Sild stekes, kok poteter, easy as 123"
+    },
+    {
+      "id":"2",
+      "name": "Rekesalat",
+      "ingredients": {
+        "contains": [
+          {"ing":"Reker"},
+          {"ing":"Salat"},
+          {"ing":"Kaffe"},
+          {"ing":"Egg"}
+        ],
+        "portions": [
+          {"por":"2"}
+        ],
+        "amount":[
+          {
+            "amo":"100g",
+            "amo":"2stk",
+            "amo":"3dl",
+            "amo":"4stk"
+          }
+        ]
+      },
+      "difficulty": "lett",
+      "cooktime": "15",
+      "description":"Hiv litt reker i en bolle med salat, good to go"
+    }
+  ]
+}
