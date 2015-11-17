@@ -34,7 +34,7 @@ public class JSONHandler extends AppCompatActivity {
             is.read(buffer);
             is.close();
             String bufferString = new String(buffer);
-            Log.d("JSON HEEER: ", "-" + bufferString);
+            // Log.d("JSON HEEER: ", "-" + bufferString);
             try{
                 js = new JSONObject(bufferString);
                 return js;

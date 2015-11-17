@@ -2,6 +2,7 @@ package s180859.bauge.christopher.cookingapplication_v1;
 
 import android.app.ListFragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ public class MyListFragment extends ListFragment{
         super.onActivityCreated(savedInstanceState);
         JSONHandler js = new JSONHandler(getActivity());
         List<Receipt> ls = js.getAllReceipts();
+        System.out.println(ls.get(0).getDescription()+"-------");
         MyListAdapter mList = new MyListAdapter(getActivity(),ls);
         setListAdapter(mList);
     }
