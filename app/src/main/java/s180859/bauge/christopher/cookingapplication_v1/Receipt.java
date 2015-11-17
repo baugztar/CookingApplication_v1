@@ -5,13 +5,14 @@ package s180859.bauge.christopher.cookingapplication_v1;
  */
 public class Receipt {
     int id;
-    String name, contains, portions, amount, difficulty, cooktime, description;
+    String name, portions, amount, difficulty, cooktime, description;
+    String[] contains;
 
     // Empty constructor
     public Receipt() {
     }
 
-    public Receipt(int id, String name, String contains, String portions, String amount, String difficulty, String cooktime, String description) {
+    public Receipt(int id, String name, String[] contains, String portions, String amount, String difficulty, String cooktime, String description) {
         this.id = id;
         this.name = name;
         this.contains = contains;
@@ -38,11 +39,11 @@ public class Receipt {
         this.name = name;
     }
 
-    public String getContains() {
+    public String[] getContains() {
         return contains;
     }
 
-    public void setContains(String contains) {
+    public void setContains(String[] contains) {
         this.contains = contains;
     }
 

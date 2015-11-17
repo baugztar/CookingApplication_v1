@@ -17,6 +17,7 @@
         ]
       },
       "difficulty": "lett",
+      "category": "sunn",
       "cooktime": "20",
       "description":"Sild stekes, kok poteter, easy as 123"
     },
@@ -43,6 +44,7 @@
         ]
       },
       "difficulty": "lett",
+      "category": "rask",
       "cooktime": "15",
       "description":"Hiv litt reker i en bolle med salat, good to go"
     }
