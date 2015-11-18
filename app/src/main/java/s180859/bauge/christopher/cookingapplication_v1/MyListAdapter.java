@@ -26,28 +26,28 @@ public class MyListAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 0;
+        return mReceipts.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return mReceipts.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override
-    public View getView(final int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent) {
         System.out.println("JEG ER HER FOr FAEN");
         View view;
         ViewHolder holder;
-
         if(convertView == null){
             holder = new ViewHolder();
             view = mInflater.inflate(R.layout.listitem,parent,false);
+
             view.setTag(holder);
             Log.d("Hello", "sweeet cheeks");
         }
