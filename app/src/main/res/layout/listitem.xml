@@ -6,19 +6,28 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:scaleType="fitXY"
+            android:id="@+id/listItem_img"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/listItem_img"
+            android:layout_alignWithParentIfMissing="true"
             android:id="@+id/listItem_name"/>
         <TextView
-            android:id="@+id/listItem_desc"
+            android:id="@+id/listItem_diff"
             android:layout_below="@+id/listItem_name"
+            android:layout_toRightOf="@+id/listItem_img"
+            android:layout_alignWithParentIfMissing="true"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </RelativeLayout>
     <ListView
         android:id="@+id/list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="wrap_content"
+        android:layout_height="72dp">
     </ListView>
 </RelativeLayout>

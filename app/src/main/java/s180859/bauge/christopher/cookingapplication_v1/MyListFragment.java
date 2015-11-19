@@ -21,9 +21,9 @@ public class MyListFragment extends ListFragment{
         super.onActivityCreated(savedInstanceState);
         JSONHandler js = new JSONHandler(getActivity());
         List<Receipt> ls = js.getAllReceipts();
-        System.out.println(ls.get(0).getDescription() + "-------");
         MyListAdapter mList = new MyListAdapter(getActivity(),ls);
         setListAdapter(mList);
+
     }
 
     @Override

@@ -5,14 +5,14 @@ package s180859.bauge.christopher.cookingapplication_v1;
  */
 public class Receipt {
     int id;
-    String name, portions, amount, difficulty, cooktime, description;
+    String name, portions, amount, difficulty, cooktime, description, img;
     String[] contains;
 
     // Empty constructor
     public Receipt() {
     }
 
-    public Receipt(int id, String name, String[] contains, String portions, String amount, String difficulty, String cooktime, String description) {
+    public Receipt(int id, String name, String[] contains, String portions, String amount, String difficulty, String cooktime, String description, String img) {
         this.id = id;
         this.name = name;
         this.contains = contains;
@@ -21,6 +21,7 @@ public class Receipt {
         this.difficulty = difficulty;
         this.cooktime = cooktime;
         this.description = description;
+        this.img = img;
     }
 
     public int getId() {
@@ -85,5 +86,13 @@ public class Receipt {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 }

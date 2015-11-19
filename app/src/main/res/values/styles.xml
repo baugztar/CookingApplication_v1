@@ -5,4 +5,18 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="MyTheme" parent="@style/Theme.AppCompat.Light">
+        <item name="android:actionBarStyle">@style/MyTheme.NewActionBar</item>
+        <item name="actionBarStyle">@style/MyTheme.NewActionBar</item>
+        <item name="android:titleTextStyle">@style/MyTheme.newActionText</item>
+    </style>
+
+    <style name="MyTheme.NewActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/orange</item>
+        <item name="background">@color/orange</item>
+    </style>
+
+    <style name="MyTheme.newActionText" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/white</item>
+    </style>
 </resources>

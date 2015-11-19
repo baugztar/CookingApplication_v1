@@ -1,0 +1,150 @@
+{
+  "recipe": [
+    {
+      "id":"1",
+      "name": "Sild og Poteter",
+      "img":"hotkid",
+      "portions": "2",
+      "ingredients": {
+        "contains": [
+          {"ing":"Sild"},
+          {"ing":"Poteter"}
+        ],
+
+        "amount":[
+          {"amo":"200g"},
+          {"amo":"3stk"}
+        ]
+      },
+      "difficulty": "lett",
+      "category": "sunn",
+      "cooktime": "20",
+      "description":"Sild stekes, kok poteter, easy as 123"
+    },
+    {
+      "id":"2",
+      "name": "Rekesalat",
+      "img":"fredcouples",
+      "portions": "2",
+      "ingredients": {
+        "contains": [
+          {"ing":"Reker"},
+          {"ing":"Salat"},
+          {"ing":"Kaffe"},
+          {"ing":"Egg"}
+        ],
+
+        "amount":[
+          {"amo":"100g"},
+          {"amo":"2stk"},
+          {"amo":"3dl"},
+          {"amo":"4stk"}
+        ]
+      },
+      "difficulty": "lett",
+      "category": "rask",
+      "cooktime": "15",
+      "description":"Hiv litt reker i en bolle med salat, good to go"
+    },
+    {
+      "id": "3",
+      "name": "Salsa",
+      "img":"fredcouples",
+      "portions": "2",
+      "ingredients": {
+        "contains": [
+          {
+            "ing": "Tomat"
+          },
+          {
+            "ing": "Agurk"
+          },
+          {
+            "ing": "Paprika"
+          },
+          {
+            "ing": "Ananas"
+          },
+          {
+            "ing": "Basilikum"
+          },
+          {
+            "ing": "Lime"
+          },
+          {
+            "ing": "Olivenolje"
+          },
+          {
+            "ing": "Salt"
+          },
+          {
+            "ing": "Pepper"
+          }
+        ],
+        "amount": [
+          {"amo": "2stk"},
+          {"amo": "1/2 stk"},
+          {"amo": "1/2 stk"},
+          {"amo": "1/4 stk frisk"},
+          {"amo": "4ss finhakket"},
+          {"amo": "saften av 1/2"},
+          {"amo": "1/2 ts"},
+          {"amo": "1/4 ts"}
+        ]
+      },
+      "difficulty": "avansert",
+      "category": "sterk",
+      "cooktime": "20",
+      "description": "1. Del tomat i to og skrap ut frøene med en teskje. Skjær tomatene i små terninger,\n2. Skrell agurk. Del agurken i to på langs og skrap ut kjernen med en teskje. Rens paprika og ananas.\n3. Skjær agurk, paprika og ananas i små terninger.\n4. Bland inn basilikum, limesaft og olje. Smak til med salt og pepper og sett salsaen kaldt til den skal brukes."
+    },
+    {
+      "id":"4",
+      "name": "Eplesalat",
+      "img":"fredcouples",
+      "portions": "2",
+      "ingredients": {
+        "contains": [
+          {"ing":"Eple"},
+          {"ing":"Salat"},
+          {"ing":"Tomat"},
+          {"ing":"Rødløk"}
+        ],
+
+        "amount":[
+          {"amo":"4 stk"},
+          {"amo":"200g"},
+          {"amo":"3stk"},
+          {"amo":"1/2 stk"}
+        ]
+      },
+      "difficulty": "lett",
+      "category": "salat",
+      "cooktime": "20",
+      "description":"1. Skrell epler og kutt i biter\n2. Kutt løk, og tomater og legg i bolle \n3. Legg alt i bolle og bland godt. "
+    },
+    {
+      "id":"5",
+      "name": "Kakesalat",
+      "img":"hotkid",
+      "portions": "2",
+      "ingredients": {
+        "contains": [
+          {"ing":"Eple"},
+          {"ing":"Salat"},
+          {"ing":"Tomat"},
+          {"ing":"Rødløk"}
+        ],
+
+        "amount":[
+          {"amo":"4 stk"},
+          {"amo":"200g"},
+          {"amo":"3stk"},
+          {"amo":"1/2 stk"}
+        ]
+      },
+      "difficulty": "lett",
+      "category": "salat",
+      "cooktime": "20",
+      "description":"1. Skrell epler og kutt i biter\n2. Kutt løk, og tomater og legg i bolle \n3. Legg alt i bolle og bland godt. "}
+  ]
+}

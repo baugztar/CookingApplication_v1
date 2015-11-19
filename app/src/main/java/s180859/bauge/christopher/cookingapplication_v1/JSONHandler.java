@@ -2,7 +2,6 @@ package s180859.bauge.christopher.cookingapplication_v1;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,15 +27,15 @@ public class JSONHandler extends AppCompatActivity {
         JSONObject js;
 
         try{
-            InputStream is = c.getAssets().open("test.json");
+            InputStream is = c.getAssets().open("test2.json");
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);
             is.close();
             String bufferString = new String(buffer);
-            // Log.d("JSON HEEER: ", "-" + bufferString);
             try{
                 js = new JSONObject(bufferString);
+                System.out.println(bufferString);
                 return js;
             }
             catch (JSONException jse){
@@ -53,9 +52,15 @@ public class JSONHandler extends AppCompatActivity {
     public List<Receipt> getAllReceipts(){
        List<Receipt> rList = new ArrayList<>();
        JSONObject j = getJson();
-
+        JSONArray ar = new JSONArray();
+        try {
+            ar = j.getJSONArray("recipe");
+        } catch(JSONException je){
+            je.printStackTrace();
+        }
+        System.out.println("LENGDE:"+j.length());
         try{
-            for (int i = 0; i <= j.length(); i++) {
+            for (int i = 0; i < ar.length(); i++) {
                 Receipt r = new Receipt();
                 //Hele Json array
                 JSONArray innerJsonArray = j.getJSONArray("recipe");
@@ -63,9 +68,9 @@ public class JSONHandler extends AppCompatActivity {
                 // Henter hvert objekt i recipe
                 JSONObject jsonObject = innerJsonArray.getJSONObject(i);
 
-                // Henter ingredientsobj
+                // Get ingredients
                 JSONObject ingred = jsonObject.getJSONObject("ingredients");
-                // Henter contains og slenger i array
+                // Getting containz and putting in array
                 JSONArray innerJsonArrayCont = ingred.getJSONArray("contains");
                 String[] containz = new String[innerJsonArrayCont.length()];
                 for(int l = 0; l<containz.length;l++){
@@ -73,18 +78,37 @@ public class JSONHandler extends AppCompatActivity {
                     containz[l] = newJs.getString("ing");
                     System.out.println(containz[l]);
                 }
-                /*  JSONArray innerJsonArrayPort = ingred.getJSONArray("portions");
-                String[] portionz = new String[innerJsonArrayPort.length()];
-                System.out.println(innerJsonArrayPort.length());
-                for(int k = 0; k<portionz.length;k++){
-                    System.out.println(innerJsonArrayPort.length());
-                    JSONObject newJZ = innerJsonArrayPort.getJSONObject(k);
-                    portionz[k] = newJZ.getString("por");
-                    System.out.println(portionz[k]);
-                }*/
+
+                // Get amount JSONarray and put in array.
+                JSONArray innerJsonArrayAmount = ingred.getJSONArray("amount");
+                String[] amount = new String[innerJsonArrayAmount.length()];
+
+
+                for(int k = 0; k<amount.length;k++){
+                    JSONObject newO = innerJsonArrayAmount.getJSONObject(k);
+                    amount[k] = newO.getString("amo");
+                    System.out.println(amount[k]+"--");
+                }
+
+                r.setImg(jsonObject.getString("img"));
+                // Get portions
+                r.setPortions(jsonObject.getString("portions"));
+                // Get cooktime
+                r.setCooktime(jsonObject.getString("cooktime"));
+
+                // Get name
                 r.setName(jsonObject.getString("name"));
+
+                // Get description
                 r.setDescription(jsonObject.getString("description"));
+
+                // Get difficulty
+                r.setDifficulty(jsonObject.getString("difficulty"));
+
+                // Get Containsarray
                 r.setContains(containz);
+
+                // Add receipt to list
                 rList.add(r);
             }
         }catch(JSONException jse){

@@ -2,11 +2,11 @@ package s180859.bauge.christopher.cookingapplication_v1;
 
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -41,34 +41,37 @@ public class MyListAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        System.out.println("JEG ER HER FOr FAEN");
         View view;
         ViewHolder holder;
         if(convertView == null){
             holder = new ViewHolder();
             view = mInflater.inflate(R.layout.listitem,parent,false);
-
             view.setTag(holder);
-            Log.d("Hello", "sweeet cheeks");
         }
         else{
             view = convertView;
             holder = (ViewHolder)view.getTag();
-            Log.d("Hello","sweeet 22222");
         }
-/*
         int clr = (position % 2 == 0 ? R.color.white : R.color.grey);
-        view.setBackgroundColor(ContextCompat.getColor(view.getContext(), clr));*/
+        view.setBackgroundColor(ContextCompat.getColor(view.getContext(), clr));
         holder.name = (TextView)view.findViewById(R.id.listItem_name);
-        holder.description = (TextView)view.findViewById(R.id.listItem_desc);
+        holder.difficulty = (TextView)view.findViewById(R.id.listItem_diff);
+        holder.avatar = (ImageView)view.findViewById(R.id.listItem_img);
         Receipt r = mReceipts.get(position);
+        int imgR = view.getResources().getIdentifier(r.getImg(), "drawable", getPackageName(view.getContext()));
+        holder.avatar.setImageResource(imgR);
+        holder.difficulty.setText(r.getDifficulty());
         holder.name.setText(r.getName());
-        holder.description.setText(r.getDescription());
         return view;
     }
 
 
     private static class ViewHolder{
         protected TextView name, description, difficulty;
+        protected ImageView avatar;
+    }
+
+    public String getPackageName(Context context) {
+        return context.getPackageName();
     }
 }
