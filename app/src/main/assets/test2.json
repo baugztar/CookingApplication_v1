@@ -3,7 +3,7 @@
     {
       "id":"1",
       "name": "Sild og Poteter",
-      "img":"hotkid",
+      "img":"citrus2",
       "portions": "2",
       "ingredients": {
         "contains": [
@@ -24,7 +24,7 @@
     {
       "id":"2",
       "name": "Rekesalat",
-      "img":"fredcouples",
+      "img":"citrus2",
       "portions": "2",
       "ingredients": {
         "contains": [
@@ -49,7 +49,7 @@
     {
       "id": "3",
       "name": "Salsa",
-      "img":"fredcouples",
+      "img":"citrus2",
       "portions": "2",
       "ingredients": {
         "contains": [
@@ -100,7 +100,7 @@
     {
       "id":"4",
       "name": "Eplesalat",
-      "img":"fredcouples",
+      "img":"pizza",
       "portions": "2",
       "ingredients": {
         "contains": [
@@ -125,7 +125,7 @@
     {
       "id":"5",
       "name": "Kakesalat",
-      "img":"hotkid",
+      "img":"pizza",
       "portions": "2",
       "ingredients": {
         "contains": [

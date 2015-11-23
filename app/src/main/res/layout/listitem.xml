@@ -7,23 +7,47 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <ImageView
-            android:layout_width="72dp"
-            android:layout_height="72dp"
+            android:layout_marginBottom="11dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
             android:scaleType="fitXY"
             android:id="@+id/listItem_img"/>
         <TextView
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="12dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_toRightOf="@+id/listItem_img"
+            android:layout_toEndOf="@+id/listItem_img"
+            android:fontFamily="sans-serif-light"
             android:layout_alignWithParentIfMissing="true"
             android:id="@+id/listItem_name"/>
         <TextView
             android:id="@+id/listItem_diff"
             android:layout_below="@+id/listItem_name"
-            android:layout_toRightOf="@+id/listItem_img"
+            android:layout_marginStart="12dp"
+            android:layout_toEndOf="@+id/listItem_img"
+            android:fontFamily="sans-serif-light"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:layout_alignWithParentIfMissing="true"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnlol"
+            android:layout_below="@+id/listItem_diff"
+            android:layout_margin="0dp"
+            android:text="hest"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/listItem_diff"
+            android:id="@+id/favIcon"/>
     </RelativeLayout>
     <ListView
         android:id="@+id/list"

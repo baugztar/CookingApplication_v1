@@ -49,8 +49,8 @@ public class JSONHandler extends AppCompatActivity {
         }
     }
 
-    public List<Receipt> getAllReceipts(){
-       List<Receipt> rList = new ArrayList<>();
+    public List<Recipe> getAllReceipts(){
+       List<Recipe> rList = new ArrayList<>();
        JSONObject j = getJson();
         JSONArray ar = new JSONArray();
         try {
@@ -61,7 +61,7 @@ public class JSONHandler extends AppCompatActivity {
         System.out.println("LENGDE:"+j.length());
         try{
             for (int i = 0; i < ar.length(); i++) {
-                Receipt r = new Receipt();
+                Recipe r = new Recipe();
                 //Hele Json array
                 JSONArray innerJsonArray = j.getJSONArray("recipe");
 
@@ -90,6 +90,7 @@ public class JSONHandler extends AppCompatActivity {
                     System.out.println(amount[k]+"--");
                 }
 
+                r.setAmount(amount);
                 r.setImg(jsonObject.getString("img"));
                 // Get portions
                 r.setPortions(jsonObject.getString("portions"));
@@ -116,6 +117,4 @@ public class JSONHandler extends AppCompatActivity {
         }
         return rList;
     }
-
-
 }

@@ -3,16 +3,18 @@ package s180859.bauge.christopher.cookingapplication_v1;
 /**
  * Created by Christopher on 17/11/2015.
  */
-public class Receipt {
+public class Recipe {
     int id;
-    String name, portions, amount, difficulty, cooktime, description, img;
-    String[] contains;
+    String name, portions, difficulty, cooktime, description, img;
+    String[] contains,amount;
+    boolean favorite;
+
 
     // Empty constructor
-    public Receipt() {
+    public Recipe() {
     }
 
-    public Receipt(int id, String name, String[] contains, String portions, String amount, String difficulty, String cooktime, String description, String img) {
+    public Recipe(int id, String name, String[] contains, String portions, String[] amount, String difficulty, String cooktime, String description, String img, boolean fav) {
         this.id = id;
         this.name = name;
         this.contains = contains;
@@ -22,6 +24,7 @@ public class Receipt {
         this.cooktime = cooktime;
         this.description = description;
         this.img = img;
+        this.favorite = false;
     }
 
     public int getId() {
@@ -56,14 +59,21 @@ public class Receipt {
         this.portions = portions;
     }
 
-    public String getAmount() {
+    public String[] getAmount() {
         return amount;
     }
 
-    public void setAmount(String amount) {
+    public void setAmount(String[] amount) {
         this.amount = amount;
     }
 
+    public boolean isFavorite() {
+        return favorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        this.favorite = favorite;
+    }
     public String getDifficulty() {
         return difficulty;
     }

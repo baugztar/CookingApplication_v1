@@ -5,18 +5,29 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="MyTheme" parent="@style/Theme.AppCompat.Light">
-        <item name="android:actionBarStyle">@style/MyTheme.NewActionBar</item>
-        <item name="actionBarStyle">@style/MyTheme.NewActionBar</item>
+    <style name="MyTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/MyTheme.newActionBar</item>
+        <item name="actionBarStyle">@style/MyTheme.newActionBar</item>
         <item name="android:titleTextStyle">@style/MyTheme.newActionText</item>
+        <item name="android:fontFamily">"sans-serif-light"</item>
+       <!-- <item name="android:listViewStyle">@style/MyTheme.MyListViewStyle</item>-->
     </style>
 
-    <style name="MyTheme.NewActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+    <style name="MyTheme.newActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@color/orange</item>
         <item name="background">@color/orange</item>
     </style>
 
-    <style name="MyTheme.newActionText" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+    <style name="MyTheme.newActionText" parent="@android:style/TextAppearance.Holo.Widget">
         <item name="android:textColor">@color/white</item>
     </style>
+
+    <style name="MyTheme.lightText" parent="@style/TextAppearance.AppCompat.Body1">
+        <item name="android:fontFamily">"sans-serif-light"</item>
+    </style>
+<!--
+    <style name="MyTheme.MyListViewStyle" parent="@android:style/Widget.ListView">
+        <item name="android:divider">@color/orange_dark</item>
+        <item name="android:dividerHeight">1dp</item>
+    </style>-->
 </resources>
