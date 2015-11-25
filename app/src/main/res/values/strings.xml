@@ -1,7 +1,5 @@
 <resources>
-    <string name="app_name">CookingApplication_v1</string>
-
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-    <string name="search">Search recipes</string>
+    <string name="app_name">Cookarello</string>
+    <string name="action_settings">Innstillinger</string>
+    <string name="search">Søk i oppskrifter</string>
 </resources>

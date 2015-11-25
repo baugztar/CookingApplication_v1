@@ -1,10 +1,12 @@
 {
   "recipe": [
     {
-      "id":"1",
+      "id":1,
       "name": "Sild og Poteter",
       "img":"citrus2",
+      "img2":"sildpotet",
       "portions": "2",
+      "type" : "Middag",
       "ingredients": {
         "contains": [
           {"ing":"Sild"},
@@ -16,14 +18,16 @@
           {"amo":"3stk"}
         ]
       },
-      "difficulty": "lett",
-      "category": "sunn",
+      "difficulty": "Lett",
+      "category": "Sunn",
       "cooktime": "20",
       "description":"Sild stekes, kok poteter, easy as 123"
     },
     {
-      "id":"2",
+      "id":2,
       "name": "Rekesalat",
+      "type": "Lunsj",
+      "img2":"sildpotet",
       "img":"citrus2",
       "portions": "2",
       "ingredients": {
@@ -41,15 +45,17 @@
           {"amo":"4stk"}
         ]
       },
-      "difficulty": "lett",
+      "difficulty": "Lett",
       "category": "rask",
       "cooktime": "15",
       "description":"Hiv litt reker i en bolle med salat, good to go"
     },
     {
-      "id": "3",
+      "id":3,
       "name": "Salsa",
+      "img2":"sildpotet",
       "img":"citrus2",
+      "type": "Lunsj",
       "portions": "2",
       "ingredients": {
         "contains": [
@@ -92,15 +98,17 @@
           {"amo": "1/4 ts"}
         ]
       },
-      "difficulty": "avansert",
+      "difficulty": "Avansert",
       "category": "sterk",
       "cooktime": "20",
       "description": "1. Del tomat i to og skrap ut frøene med en teskje. Skjær tomatene i små terninger,\n2. Skrell agurk. Del agurken i to på langs og skrap ut kjernen med en teskje. Rens paprika og ananas.\n3. Skjær agurk, paprika og ananas i små terninger.\n4. Bland inn basilikum, limesaft og olje. Smak til med salt og pepper og sett salsaen kaldt til den skal brukes."
     },
     {
-      "id":"4",
+      "id":4,
       "name": "Eplesalat",
       "img":"pizza",
+      "img2":"sildpotet",
+      "type": "Lunsj",
       "portions": "2",
       "ingredients": {
         "contains": [
@@ -117,15 +125,17 @@
           {"amo":"1/2 stk"}
         ]
       },
-      "difficulty": "lett",
+      "difficulty": "Lett",
       "category": "salat",
       "cooktime": "20",
       "description":"1. Skrell epler og kutt i biter\n2. Kutt løk, og tomater og legg i bolle \n3. Legg alt i bolle og bland godt. "
     },
     {
-      "id":"5",
+      "id":5,
       "name": "Kakesalat",
       "img":"pizza",
+      "img2":"sildpotet",
+      "type": "Lunsj",
       "portions": "2",
       "ingredients": {
         "contains": [
@@ -142,7 +152,33 @@
           {"amo":"1/2 stk"}
         ]
       },
-      "difficulty": "lett",
+      "difficulty": "Lett",
+      "category": "salat",
+      "cooktime": "20",
+      "description":"1. Skrell epler og kutt i biter\n2. Kutt løk, og tomater og legg i bolle \n3. Legg alt i bolle og bland godt. "},
+    {
+      "id":6,
+      "name": "Rekepai",
+      "img":"pizza",
+      "img2":"sildpotet",
+      "type": "Lunsj",
+      "portions": "2",
+      "ingredients": {
+        "contains": [
+          {"ing":"Eple"},
+          {"ing":"Salat"},
+          {"ing":"Tomat"},
+          {"ing":"Rødløk"}
+        ],
+
+        "amount":[
+          {"amo":"4 stk"},
+          {"amo":"200g"},
+          {"amo":"3stk"},
+          {"amo":"1/2 stk"}
+        ]
+      },
+      "difficulty": "Lett",
       "category": "salat",
       "cooktime": "20",
       "description":"1. Skrell epler og kutt i biter\n2. Kutt løk, og tomater og legg i bolle \n3. Legg alt i bolle og bland godt. "}

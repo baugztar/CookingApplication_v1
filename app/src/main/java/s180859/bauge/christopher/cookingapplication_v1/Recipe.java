@@ -5,8 +5,18 @@ package s180859.bauge.christopher.cookingapplication_v1;
  */
 public class Recipe {
     int id;
-    String name, portions, difficulty, cooktime, description, img;
-    String[] contains,amount;
+    String name;
+    String portions;
+    String difficulty;
+    String cooktime;
+    String description;
+    String img;
+    String recipeimg;
+    String[] contains, amount;
+
+
+
+    String type;
     boolean favorite;
 
 
@@ -74,6 +84,7 @@ public class Recipe {
     public void setFavorite(boolean favorite) {
         this.favorite = favorite;
     }
+
     public String getDifficulty() {
         return difficulty;
     }
@@ -105,4 +116,21 @@ public class Recipe {
     public void setImg(String img) {
         this.img = img;
     }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getRecipeimg() {
+        return recipeimg;
+    }
+
+    public void setRecipeimg(String recipeimg) {
+        this.recipeimg = recipeimg;
+    }
+
 }

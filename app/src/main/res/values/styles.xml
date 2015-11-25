@@ -9,7 +9,6 @@
         <item name="android:actionBarStyle">@style/MyTheme.newActionBar</item>
         <item name="actionBarStyle">@style/MyTheme.newActionBar</item>
         <item name="android:titleTextStyle">@style/MyTheme.newActionText</item>
-        <item name="android:fontFamily">"sans-serif-light"</item>
        <!-- <item name="android:listViewStyle">@style/MyTheme.MyListViewStyle</item>-->
     </style>
 

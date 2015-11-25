@@ -35,7 +35,6 @@ public class JSONHandler extends AppCompatActivity {
             String bufferString = new String(buffer);
             try{
                 js = new JSONObject(bufferString);
-                System.out.println(bufferString);
                 return js;
             }
             catch (JSONException jse){
@@ -76,7 +75,6 @@ public class JSONHandler extends AppCompatActivity {
                 for(int l = 0; l<containz.length;l++){
                     JSONObject newJs = innerJsonArrayCont.getJSONObject(l);
                     containz[l] = newJs.getString("ing");
-                    System.out.println(containz[l]);
                 }
 
                 // Get amount JSONarray and put in array.
@@ -87,15 +85,17 @@ public class JSONHandler extends AppCompatActivity {
                 for(int k = 0; k<amount.length;k++){
                     JSONObject newO = innerJsonArrayAmount.getJSONObject(k);
                     amount[k] = newO.getString("amo");
-                    System.out.println(amount[k]+"--");
                 }
 
+                r.setId(jsonObject.getInt("id"));
                 r.setAmount(amount);
                 r.setImg(jsonObject.getString("img"));
                 // Get portions
                 r.setPortions(jsonObject.getString("portions"));
                 // Get cooktime
                 r.setCooktime(jsonObject.getString("cooktime"));
+
+                r.setType(jsonObject.getString("type"));
 
                 // Get name
                 r.setName(jsonObject.getString("name"));
@@ -106,8 +106,13 @@ public class JSONHandler extends AppCompatActivity {
                 // Get difficulty
                 r.setDifficulty(jsonObject.getString("difficulty"));
 
+                // Get image for recipe page
+                r.setRecipeimg(jsonObject.getString("img2"));
+
                 // Get Containsarray
                 r.setContains(containz);
+
+
 
                 // Add receipt to list
                 rList.add(r);

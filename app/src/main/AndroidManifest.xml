@@ -16,7 +16,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".RecipePage"
-            android:label="Recipes">
+            android:label="Recipes"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
 
         </activity>
     </application>

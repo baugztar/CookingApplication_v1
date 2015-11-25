@@ -26,7 +26,6 @@ public class MyListAdapter extends BaseAdapter {
     private List<Recipe> mRecipes;
     private Context context;
     private ArrayList<Recipe> arraylist;
-    private List<Recipe> favList;
 
     public MyListAdapter(Context context, List<Recipe> recipes){
         this.mInflater = LayoutInflater.from(context);
@@ -34,6 +33,7 @@ public class MyListAdapter extends BaseAdapter {
         this.context = context;
         this.arraylist = new ArrayList<Recipe>();
         this.arraylist.addAll(mRecipes);
+        System.out.println(mRecipes.get(1).isFavorite() + "--test2");
     }
 
     @Override
@@ -73,23 +73,6 @@ public class MyListAdapter extends BaseAdapter {
         holder.butt = (Button)view.findViewById(R.id.btnlol);
         holder.favIcon = (ImageView)view.findViewById(R.id.favIcon);
 
-       /* holder.search.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-
-            }
-        });*/
 
         final Recipe r = mRecipes.get(position);
         int imgR = view.getResources().getIdentifier(r.getImg(), "drawable", getPackageName(view.getContext()));
@@ -101,19 +84,19 @@ public class MyListAdapter extends BaseAdapter {
             imgFav = view.getResources().getIdentifier("favstargrey","drawable",getPackageName(view.getContext()));
         }
 
-        // Setter lytter til favorittikon
-
-
         holder.avatar.setImageResource(imgR);
         holder.favIcon.setImageResource(imgFav);
-        String formattedDiff = r.getDifficulty().substring(0,1).toUpperCase() + r.getDifficulty().substring(1);
-        holder.difficulty.setText(formattedDiff);
+
+        //Testmetode for uppercase ord.
+        //String formattedDiff = r.getDifficulty().substring(0,1).toUpperCase() + r.getDifficulty().substring(1);
+        holder.difficulty.setText(r.getDifficulty());
         holder.name.setText(r.getName());
         holder.butt.setOnClickListener(new View.OnClickListener(){
             @Override
         public void onClick(View v){
                 switch(v.getId()){
                     case R.id.btnlol:
+                        updateView();
                         System.out.println("pressed");
                         Recipe r2 = mRecipes.get(position);
                         Intent i = new Intent(context,RecipePage.class);
@@ -123,6 +106,10 @@ public class MyListAdapter extends BaseAdapter {
                         b.putStringArray("contains", r2.getContains());
                         b.putStringArray("amount", r2.getAmount());
                         b.putString("cooktime", r2.getCooktime());
+                        b.putString("image",r2.getRecipeimg());
+                        b.putString("portions",r2.getPortions());
+                        b.putString("type",r2.getType());
+                        b.putInt("id", r2.getId());
                         b.putBoolean("fav",r2.isFavorite());
                         i.putExtras(b);
                         context.startActivity(i);
@@ -134,47 +121,50 @@ public class MyListAdapter extends BaseAdapter {
 
 
     private static class ViewHolder{
-        protected TextView name, description, difficulty;
+        protected TextView name, difficulty;
         protected ImageView avatar, favIcon;
         protected Button butt;
-        protected EditText search;
     }
 
-
-    public String getPackageName(Context context) {
-        return context.getPackageName();
+    public String getFavIds(List<Recipe> rList){
+        String out = "";
+        for (Recipe r : rList
+             ) {
+            if(r.isFavorite()){
+                out+=r.getId()+",";
+            }
+        }
+        return out;
     }
+
+    public String getPackageName(Context c) {
+        return c.getPackageName();
+    }
+
+    // Filter-method to use on search method.
     public void filter(String inText) {
+        // Text to lowercase for testing purposes.
         inText = inText.toLowerCase(Locale.getDefault());
+        // clear list
         mRecipes.clear();
+        // if searchfield empty, add entire list.
         if (inText.length() == 0) {
             mRecipes.addAll(arraylist);
         } else {
             for (Recipe r : arraylist) {
+                // If search text is in name or type, add to results.
                 if (r.getName().toLowerCase(Locale.getDefault())
-                        .contains(inText)) {
+                        .contains(inText) || r.getType().toLowerCase(Locale.getDefault()).contains(inText)) {
                     mRecipes.add(r);
                 }
             }
         }
-        // refresh listview
         updateView();
     }
 
-
-    // Update listview.
+    // Refresh listview.
     private void updateView(){
         notifyDataSetChanged();
     }
 
-    // TEST CLASssSS
-    private List<Recipe> getFavList(){
-        return favList;
-    }
-
-    // TEST CLASSS --- _ -
-    private Boolean getFavorites(){
-        SharedPreferences s = context.getSharedPreferences("prefs",Context.MODE_PRIVATE);
-        return true;
-    }
 }
