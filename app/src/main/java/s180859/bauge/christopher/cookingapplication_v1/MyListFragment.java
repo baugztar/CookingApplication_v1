@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
@@ -20,22 +21,23 @@ import java.util.Locale;
  * Created by Christopher on 17/11/2015.
  */
 public class MyListFragment extends ListFragment{
+    EditText search;
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         createView();
     }
 
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
     public void startDb(List<Recipe> l){
         DBHandler db = new DBHandler(getActivity());
-        System.out.println("test0");
         if(db.isNotUpdated()<l.size()){
-            System.out.println("test22");
             System.out.println(db.isNotUpdated());
-            /*for(int i = db.isNotUpdated(); i==l.size();i++){
-                System.out.println("test2");
-                db.addRecipe(l.get(i));
-            }*/
             for (Recipe r:l)
             {
                 if(db.isNotUpdated()<l.size()){
@@ -46,20 +48,11 @@ public class MyListFragment extends ListFragment{
         db.close();
     }
 
-    public void updateList(List<Recipe> l ){
-        DBHandler db = new DBHandler(getActivity());
-        for (Recipe r:l)
-        {
-          db.updateRecipe(r);
-        }
-        db.close();
-    }
 
     public void populateFavs(List<Recipe> l){
         DBHandler db = new DBHandler(getActivity());
         for(Recipe r: l){
             int ok = db.getFavorite(r.getId()-1);
-            System.out.println("loggers: " + ok);
             if(ok == 0){
                 r.setFavorite(false);
             }
@@ -80,12 +73,10 @@ public class MyListFragment extends ListFragment{
         JSONHandler js = new JSONHandler(getActivity());
         List<Recipe> ls = js.getAllReceipts();
         populateFavs(ls);
-        System.out.println(ls.get(1).isFavorite() + "--test0.5");
         startDb(ls);
-        System.out.println(ls.get(1).isFavorite() + "--test1");
         final MyListAdapter mList = new MyListAdapter(getActivity(),ls);
         setListAdapter(mList);
-        final EditText search = (EditText)getActivity().findViewById(R.id.searchyo);
+        search = (EditText)getActivity().findViewById(R.id.searchyo);
         search.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -103,18 +94,29 @@ public class MyListFragment extends ListFragment{
 
             }
         });
-
         ImageButton b = (ImageButton)getActivity().findViewById(R.id.clearSearchfield);
-        b.setOnClickListener(new View.OnClickListener(){
+        b.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 // Clear inputfield
-                search.setText("");
+                clearSearchField();
             }
         });
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return super.onCreateView(inflater, container, savedInstanceState);
+    }
+
+    public void clearSearchField(){
+        search = (EditText)getActivity().findViewById(R.id.searchyo);
+        search.setText("");
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        clearSearchField();
     }
 }

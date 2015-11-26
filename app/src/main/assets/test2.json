@@ -10,18 +10,20 @@
       "ingredients": {
         "contains": [
           {"ing":"Sild"},
-          {"ing":"Poteter"}
+          {"ing":"Poteter"},
+          {"ing":"Salt"}
         ],
 
         "amount":[
-          {"amo":"200g"},
-          {"amo":"3stk"}
+          {"amo":"200 g"},
+          {"amo":"4 stk"},
+          {"amo":"2 ts"}
         ]
       },
       "difficulty": "Lett",
       "category": "Sunn",
       "cooktime": "20",
-      "description":"Sild stekes, kok poteter, easy as 123"
+      "description":"1. Skrell poteter og kok opp i lettsaltet vann.\n2. Stek sild på middels varme i smør eller olje.\n3. Server gjerne med dill og en god saus."
     },
     {
       "id":2,

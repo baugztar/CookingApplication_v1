@@ -3,6 +3,7 @@ package s180859.bauge.christopher.cookingapplication_v1;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
@@ -75,9 +76,7 @@ public class RecipePage extends AppCompatActivity {
                         for(int i = 0; i<jar.length();i++){
                             JSONObject ob = jar.getJSONObject(i);
                         if ((ob.getString("id").equals(String.valueOf(r.getId())))){
-                            System.out.println(ob.getString("favorite"));
                             ob.put("favorite", "false");
-                            System.out.println(ob.getString("favorite"));
                             }
                         }
                     }

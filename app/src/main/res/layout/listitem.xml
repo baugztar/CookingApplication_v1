@@ -4,6 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <RelativeLayout
+        android:id="@+id/itemyo"
+        android:clickable="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <ImageView
@@ -16,7 +18,9 @@
             android:scaleType="fitXY"
             android:id="@+id/listItem_img"/>
         <TextView
+            android:focusable="false"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:clickable="true"
             android:layout_marginTop="4dp"
             android:layout_marginStart="12dp"
             android:layout_width="match_parent"
@@ -26,7 +30,9 @@
             android:layout_alignWithParentIfMissing="true"
             android:id="@+id/listItem_name"/>
         <TextView
+            android:focusable="false"
             android:id="@+id/listItem_diff"
+            android:clickable="true"
             android:layout_below="@+id/listItem_name"
             android:layout_marginStart="12dp"
             android:layout_toEndOf="@+id/listItem_img"
@@ -35,13 +41,6 @@
             android:layout_alignWithParentIfMissing="true"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnlol"
-            android:layout_below="@+id/listItem_diff"
-            android:layout_margin="0dp"
-            android:text="hest"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -49,9 +48,4 @@
             android:layout_below="@id/listItem_diff"
             android:id="@+id/favIcon"/>
     </RelativeLayout>
-    <ListView
-        android:id="@+id/list"
-        android:layout_width="wrap_content"
-        android:layout_height="72dp">
-    </ListView>
 </RelativeLayout>

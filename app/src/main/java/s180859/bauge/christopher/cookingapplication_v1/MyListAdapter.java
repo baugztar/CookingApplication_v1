@@ -1,5 +1,6 @@
 package s180859.bauge.christopher.cookingapplication_v1;
 
+import android.app.LauncherActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -7,10 +8,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -26,12 +30,13 @@ public class MyListAdapter extends BaseAdapter {
     private List<Recipe> mRecipes;
     private Context context;
     private ArrayList<Recipe> arraylist;
+    List<Recipe> rs;
 
     public MyListAdapter(Context context, List<Recipe> recipes){
         this.mInflater = LayoutInflater.from(context);
         this.mRecipes = recipes;
         this.context = context;
-        this.arraylist = new ArrayList<Recipe>();
+        this.arraylist = new ArrayList<>();
         this.arraylist.addAll(mRecipes);
         System.out.println(mRecipes.get(1).isFavorite() + "--test2");
     }
@@ -53,8 +58,8 @@ public class MyListAdapter extends BaseAdapter {
 
     @Override
     public View getView(final int position, final View convertView, ViewGroup parent) {
-        View view;
-        ViewHolder holder;
+        final View view;
+        final ViewHolder holder;
         if(convertView == null){
             holder = new ViewHolder();
             view = mInflater.inflate(R.layout.listitem,parent,false);
@@ -64,15 +69,11 @@ public class MyListAdapter extends BaseAdapter {
             view = convertView;
             holder = (ViewHolder)view.getTag();
         }
-       /* int clr = R.color.orange_light;
-        view.setBackgroundColor(ContextCompat.getColor(view.getContext(), clr));*/
 
         holder.name = (TextView)view.findViewById(R.id.listItem_name);
         holder.difficulty = (TextView)view.findViewById(R.id.listItem_diff);
         holder.avatar = (ImageView)view.findViewById(R.id.listItem_img);
-        holder.butt = (Button)view.findViewById(R.id.btnlol);
         holder.favIcon = (ImageView)view.findViewById(R.id.favIcon);
-
 
         final Recipe r = mRecipes.get(position);
         int imgR = view.getResources().getIdentifier(r.getImg(), "drawable", getPackageName(view.getContext()));
@@ -83,37 +84,29 @@ public class MyListAdapter extends BaseAdapter {
         else{
             imgFav = view.getResources().getIdentifier("favstargrey","drawable",getPackageName(view.getContext()));
         }
-
         holder.avatar.setImageResource(imgR);
         holder.favIcon.setImageResource(imgFav);
-
+        holder.name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clicked(position);
+            }
+        });
+        holder.difficulty.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clicked(position);
+            }
+        });
         //Testmetode for uppercase ord.
         //String formattedDiff = r.getDifficulty().substring(0,1).toUpperCase() + r.getDifficulty().substring(1);
+        holder.rel = (RelativeLayout) view.findViewById(R.id.itemyo);
         holder.difficulty.setText(r.getDifficulty());
         holder.name.setText(r.getName());
-        holder.butt.setOnClickListener(new View.OnClickListener(){
+        holder.rel.setOnClickListener(new View.OnClickListener() {
             @Override
-        public void onClick(View v){
-                switch(v.getId()){
-                    case R.id.btnlol:
-                        updateView();
-                        System.out.println("pressed");
-                        Recipe r2 = mRecipes.get(position);
-                        Intent i = new Intent(context,RecipePage.class);
-                        Bundle b = new Bundle();
-                        b.putString("name",r2.getName());
-                        b.putString("desc", r2.getDescription());
-                        b.putStringArray("contains", r2.getContains());
-                        b.putStringArray("amount", r2.getAmount());
-                        b.putString("cooktime", r2.getCooktime());
-                        b.putString("image",r2.getRecipeimg());
-                        b.putString("portions",r2.getPortions());
-                        b.putString("type",r2.getType());
-                        b.putInt("id", r2.getId());
-                        b.putBoolean("fav",r2.isFavorite());
-                        i.putExtras(b);
-                        context.startActivity(i);
-                }
+            public void onClick(View v) {
+                clicked(position);
             }
         });
         return view;
@@ -124,7 +117,11 @@ public class MyListAdapter extends BaseAdapter {
         protected TextView name, difficulty;
         protected ImageView avatar, favIcon;
         protected Button butt;
+        protected LauncherActivity.ListItem l;
+        protected RelativeLayout rel;
     }
+
+
 
     public String getFavIds(List<Recipe> rList){
         String out = "";
@@ -137,6 +134,35 @@ public class MyListAdapter extends BaseAdapter {
         return out;
     }
 
+    public List<Recipe> getFavz(List<Recipe> rList){
+        for(Recipe r: rList){
+            if(!r.isFavorite()){
+                rList.remove(r.getId());
+            }
+        }
+        return rList;
+    }
+
+
+
+    public void clicked(int position){
+        System.out.println("pressed");
+        Recipe r2 = mRecipes.get(position);
+        Intent i = new Intent(context,RecipePage.class);
+        Bundle b = new Bundle();
+        b.putString("name",r2.getName());
+        b.putString("desc", r2.getDescription());
+        b.putStringArray("contains", r2.getContains());
+        b.putStringArray("amount", r2.getAmount());
+        b.putString("cooktime", r2.getCooktime());
+        b.putString("image",r2.getRecipeimg());
+        b.putString("portions",r2.getPortions());
+        b.putString("type",r2.getType());
+        b.putInt("id", r2.getId());
+        b.putBoolean("fav",r2.isFavorite());
+        i.putExtras(b);
+        context.startActivity(i);
+    }
     public String getPackageName(Context c) {
         return c.getPackageName();
     }
