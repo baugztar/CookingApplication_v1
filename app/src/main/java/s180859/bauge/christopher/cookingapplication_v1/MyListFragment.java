@@ -1,14 +1,17 @@
 package s180859.bauge.christopher.cookingapplication_v1;
 
+import android.app.ActionBar;
 import android.app.ListFragment;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -25,7 +28,6 @@ public class MyListFragment extends ListFragment{
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        createView();
     }
 
 
@@ -75,6 +77,7 @@ public class MyListFragment extends ListFragment{
         populateFavs(ls);
         startDb(ls);
         final MyListAdapter mList = new MyListAdapter(getActivity(),ls);
+        Log.d("SIZZEEE", "" + mList.getCount());
         setListAdapter(mList);
         search = (EditText)getActivity().findViewById(R.id.searchyo);
         search.addTextChangedListener(new TextWatcher() {

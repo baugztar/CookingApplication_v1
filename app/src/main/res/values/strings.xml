@@ -2,6 +2,6 @@
     <string name="app_name">Cookarello</string>
     <string name="action_settings">Innstillinger</string>
     <string name="search">Søk i oppskrifter</string>
-    <string name="tabAlle">Alle</string>
+    <string name="tabAll">Alle</string>
     <string name="tabFav">Favoritter</string>
 </resources>

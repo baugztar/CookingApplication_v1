@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="red" type="color">#c0392b</item>
-    <item name="blue" type="color">#2980b9</item>
+
     <item name="white" type="color">#ecf0f1</item>
     <item name="grey" type="color">#D5D9DB</item>
     <item name="black" type="color">#000000</item>
-    <item name="blackseventy" type="color">#B3000000</item>
+    <item name="blackopac70" type="color">#B3000000</item>
 
-    <item name="orange" type="color">#E91E63</item>
-    <item name="orange_light" type="color">#F8BBD0</item>
-    <item name="orange_dark" type="color">#C2185B</item>
-    <item name="orange_lighter" type="color">#FFF3E0</item>
 
+    <item name="red" type="color">#c0392b</item>
+    <item name="pink" type="color">#E91E63</item>
+    <item name="pink_light" type="color">#F8BBD0</item>
+    <item name="pink_dark" type="color">#C2185B</item>
+
+    <item name="green_light" type="color">#8BC34A</item>
+
+    <item name="blue" type="color">#2980b9</item>
 </resources>
 

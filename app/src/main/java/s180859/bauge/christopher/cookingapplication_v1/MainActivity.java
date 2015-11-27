@@ -1,8 +1,10 @@
 package s180859.bauge.christopher.cookingapplication_v1;
 
+import android.app.ActionBar;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.app.ListFragment;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -23,31 +25,34 @@ public class MainActivity extends AppCompatActivity {
         ft.addToBackStack(null).commit();
         btn1 = (Button)findViewById(R.id.btnAll);
         btn2 = (Button)findViewById(R.id.btnFav);
-
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fm.popBackStack();
                 ListFragment f1 = new MyListFragment();
                 FragmentTransaction ft = fm.beginTransaction();
-                ft.addToBackStack(null).commit();
+                ft.addToBackStack(null);
                 ft.replace(R.id.contentFragment, f1);
-                fm.popBackStack();
-                System.out.println(fm.getBackStackEntryCount()+"backkustackku");
+                ft.commit();
+                fm.executePendingTransactions();
+                System.out.println(fm.getBackStackEntryCount() + "backkustackku");
             }
         });
 
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ListFragment f1 = new FavListFragment();
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.addToBackStack(null).commit();
-                ft.replace(R.id.contentFragment, f1);
+                // prevent fragments from stacking
                 fm.popBackStack();
+                ListFragment f2 = new FavListFragment();
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.addToBackStack(null);
+                ft.replace(R.id.contentFragment, f2);
+                ft.commit();
+                fm.executePendingTransactions();
                 System.out.println(fm.getBackStackEntryCount());
             }
         });
-
     }
 
     @Override

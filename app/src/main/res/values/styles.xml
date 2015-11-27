@@ -13,8 +13,8 @@
     </style>
 
     <style name="MyTheme.newActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
-        <item name="android:background">@color/orange</item>
-        <item name="background">@color/orange</item>
+        <item name="android:background">@color/pink</item>
+        <item name="background">@color/pink</item>
     </style>
 
     <style name="MyTheme.newActionText" parent="@android:style/TextAppearance.Holo.Widget">

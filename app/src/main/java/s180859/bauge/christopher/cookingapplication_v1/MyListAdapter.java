@@ -30,7 +30,6 @@ public class MyListAdapter extends BaseAdapter {
     private List<Recipe> mRecipes;
     private Context context;
     private ArrayList<Recipe> arraylist;
-    List<Recipe> rs;
 
     public MyListAdapter(Context context, List<Recipe> recipes){
         this.mInflater = LayoutInflater.from(context);
@@ -38,7 +37,6 @@ public class MyListAdapter extends BaseAdapter {
         this.context = context;
         this.arraylist = new ArrayList<>();
         this.arraylist.addAll(mRecipes);
-        System.out.println(mRecipes.get(1).isFavorite() + "--test2");
     }
 
     @Override
@@ -98,8 +96,6 @@ public class MyListAdapter extends BaseAdapter {
                 clicked(position);
             }
         });
-        //Testmetode for uppercase ord.
-        //String formattedDiff = r.getDifficulty().substring(0,1).toUpperCase() + r.getDifficulty().substring(1);
         holder.rel = (RelativeLayout) view.findViewById(R.id.itemyo);
         holder.difficulty.setText(r.getDifficulty());
         holder.name.setText(r.getName());
@@ -116,34 +112,8 @@ public class MyListAdapter extends BaseAdapter {
     private static class ViewHolder{
         protected TextView name, difficulty;
         protected ImageView avatar, favIcon;
-        protected Button butt;
-        protected LauncherActivity.ListItem l;
         protected RelativeLayout rel;
     }
-
-
-
-    public String getFavIds(List<Recipe> rList){
-        String out = "";
-        for (Recipe r : rList
-             ) {
-            if(r.isFavorite()){
-                out+=r.getId()+",";
-            }
-        }
-        return out;
-    }
-
-    public List<Recipe> getFavz(List<Recipe> rList){
-        for(Recipe r: rList){
-            if(!r.isFavorite()){
-                rList.remove(r.getId());
-            }
-        }
-        return rList;
-    }
-
-
 
     public void clicked(int position){
         System.out.println("pressed");
@@ -187,6 +157,8 @@ public class MyListAdapter extends BaseAdapter {
         }
         updateView();
     }
+
+
 
     // Refresh listview.
     private void updateView(){
