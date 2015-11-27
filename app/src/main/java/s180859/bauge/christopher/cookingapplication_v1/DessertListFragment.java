@@ -8,7 +8,6 @@ import android.app.ListFragment;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,7 +50,6 @@ public class DessertListFragment extends ListFragment {
     public List<Recipe> populateLunch(List<Recipe> l){
         List<Recipe> r2 = new ArrayList<>();
         for(Recipe r: l){
-            System.out.println(r.getId()+"--"+r.getType().toLowerCase());
             if(r.getType().toLowerCase().equals("dessert")){
                 r2.add(r);
             }

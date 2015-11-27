@@ -43,7 +43,6 @@ public class MyListFragment extends ListFragment{
             for (Recipe r:l)
             {
                 if(db.isNotUpdated()<r.getId()){
-                    Log.d("Legger til:","ID:"+r.getId()+"-"+r.getName());
                     db.addRecipe(r);
                 }
             }

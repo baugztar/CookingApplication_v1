@@ -275,7 +275,7 @@
       "name": "Spenstig hamburger",
       "img":"hamburger",
       "img2":"burger2",
-      "type": "Dinner",
+      "type": "Middag",
       "portions": "",
       "ingredients": {
         "contains": [
@@ -334,8 +334,8 @@
       "id":12,
       "name": "Pasta Carbonara",
       "img":"spaghoot",
-      "img2":"veganpancakes",
-      "type": "Lunsj",
+      "img2":"carbonara",
+      "type": "Middag",
       "portions": "4",
       "ingredients": {
         "contains": [
@@ -354,7 +354,7 @@
           {"amo":"12 stk skiver"},
           {"amo":"250 gram"},
           {"amo":"1 neve"},
-          {"ing":"50 gram revet"}
+          {"amo":"50 gram revet"}
         ]
       },
       "difficulty": "Middels",

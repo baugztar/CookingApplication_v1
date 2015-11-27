@@ -56,7 +56,6 @@ public class DinnerListFragment extends ListFragment{
     public List<Recipe> populateDinners(List<Recipe> l){
         List<Recipe> r2 = new ArrayList<>();
         for(Recipe r: l){
-            System.out.println(r.getId()+"--"+r.getType().toLowerCase());
             if(r.getType().toLowerCase().equals("middag")){
                 r2.add(r);
             }

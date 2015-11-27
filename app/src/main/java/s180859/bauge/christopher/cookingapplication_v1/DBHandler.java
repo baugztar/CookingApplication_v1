@@ -20,7 +20,7 @@ public class DBHandler extends SQLiteOpenHelper {
     static String KEY_JSON = "Jsonid";
     static String KEY_FAV = "Favorite";
     static int DATABASE_VERSION = 1;
-    static String DATABASE_NAME ="DBLOL";
+    static String DATABASE_NAME ="FINALD";
     public DBHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
