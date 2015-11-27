@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -116,7 +117,6 @@ public class MyListAdapter extends BaseAdapter {
     }
 
     public void clicked(int position){
-        System.out.println("pressed");
         Recipe r2 = mRecipes.get(position);
         Intent i = new Intent(context,RecipePage.class);
         Bundle b = new Bundle();
@@ -129,7 +129,7 @@ public class MyListAdapter extends BaseAdapter {
         b.putString("portions",r2.getPortions());
         b.putString("type",r2.getType());
         b.putInt("id", r2.getId());
-        b.putBoolean("fav",r2.isFavorite());
+        b.putBoolean("fav", r2.isFavorite());
         i.putExtras(b);
         context.startActivity(i);
     }

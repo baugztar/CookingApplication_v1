@@ -17,6 +17,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -24,6 +25,7 @@ import java.util.Locale;
  * Created by Christopher on 17/11/2015.
  */
 public class DinnerListFragment extends ListFragment{
+    List<Recipe> rr;
     EditText search;
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -35,21 +37,6 @@ public class DinnerListFragment extends ListFragment{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-
-    public void startDb(List<Recipe> l){
-        DBHandler db = new DBHandler(getActivity());
-        if(db.isNotUpdated()<l.size()){
-            System.out.println(db.isNotUpdated());
-            for (Recipe r:l)
-            {
-                if(db.isNotUpdated()<l.size()){
-                    db.addRecipe(r);
-                }
-            }
-        }
-        db.close();
-    }
-
 
     public void populateFavs(List<Recipe> l){
         DBHandler db = new DBHandler(getActivity());
@@ -65,6 +52,18 @@ public class DinnerListFragment extends ListFragment{
         db.close();
     }
 
+
+    public List<Recipe> populateDinners(List<Recipe> l){
+        List<Recipe> r2 = new ArrayList<>();
+        for(Recipe r: l){
+            System.out.println(r.getId()+"--"+r.getType().toLowerCase());
+            if(r.getType().toLowerCase().equals("middag")){
+                r2.add(r);
+            }
+        }
+        return r2;
+    }
+
     @Override
     public void onResume() {
         super.onResume();
@@ -74,10 +73,9 @@ public class DinnerListFragment extends ListFragment{
     public void createView(){
         JSONHandler js = new JSONHandler(getActivity());
         List<Recipe> ls = js.getAllReceipts();
+        rr = populateDinners(ls);
         populateFavs(ls);
-        startDb(ls);
-        final MyListAdapter mList = new MyListAdapter(getActivity(),ls);
-        Log.d("SIZZEEE", "" + mList.getCount());
+        final MyListAdapter mList = new MyListAdapter(getActivity(),rr);
         setListAdapter(mList);
         search = (EditText)getActivity().findViewById(R.id.searchyo);
         search.addTextChangedListener(new TextWatcher() {
@@ -85,7 +83,6 @@ public class DinnerListFragment extends ListFragment{
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
             }
-
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String text = search.getText().toString().toLowerCase(Locale.getDefault());

@@ -1,5 +1,10 @@
 package s180859.bauge.christopher.cookingapplication_v1;
 
+/**
+ * Created by Christopher on 27/11/2015.
+ */
+
+import android.app.ListFragment;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -9,66 +14,70 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
 /**
- * Created by Christopher on 24/11/2015.
+ * Created by Christopher on 17/11/2015.
  */
-public class FavListFragment extends MyListFragment {
+public class LunchListFragment extends ListFragment {
     List<Recipe> rr;
     EditText search;
-
-
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
     }
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        createView();
     }
 
-    public List<Recipe> populateFavss(List<Recipe> l){
+    public void populateFavs(List<Recipe> l){
         DBHandler db = new DBHandler(getActivity());
-        List<Recipe> r2 = new ArrayList<>();
         for(Recipe r: l){
             int ok = db.getFavorite(r.getId()-1);
             if(ok == 0){
                 r.setFavorite(false);
-                System.out.println("prover");
             }
             else{
                 r.setFavorite(true);
-                r2.add(r);
-                System.out.println("proverhardt");
             }
         }
         db.close();
+    }
+
+    public List<Recipe> populateLunch(List<Recipe> l){
+        List<Recipe> r2 = new ArrayList<>();
+        for(Recipe r: l){
+            if(r.getType().toLowerCase().equals("lunsj")){
+                r2.add(r);
+            }
+        }
         return r2;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        createView();
     }
 
     public void createView(){
         JSONHandler js = new JSONHandler(getActivity());
         List<Recipe> ls = js.getAllReceipts();
-        rr = populateFavss(ls);
+        rr = populateLunch(ls);
+        populateFavs(ls);
         final MyListAdapter mList = new MyListAdapter(getActivity(),rr);
-
-        Log.d("SIZZEEE",""+mList.getCount());
         setListAdapter(mList);
-
         search = (EditText)getActivity().findViewById(R.id.searchyo);
         search.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
 
+            }
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String text = search.getText().toString().toLowerCase(Locale.getDefault());
@@ -104,15 +113,5 @@ public class FavListFragment extends MyListFragment {
     public void onPause() {
         super.onPause();
         clearSearchField();
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
     }
 }

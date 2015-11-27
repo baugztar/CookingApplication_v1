@@ -1,82 +1,101 @@
 package s180859.bauge.christopher.cookingapplication_v1;
 
-import android.app.ActionBar;
+import android.app.AlertDialog;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.app.ListFragment;
-import android.graphics.Color;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    private Button btn1,btn2,btn3;
+    private Button btnAll,btnFav,btnDinner,btnLunch,btnDessert;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        DBHandler db = new DBHandler(this);
         final FragmentManager fm = getFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         ListFragment f1 = new MyListFragment();
         ft.replace(R.id.contentFragment, f1);
         ft.addToBackStack(null).commit();
-        btn1 = (Button)findViewById(R.id.btnAll);
-        btn2 = (Button)findViewById(R.id.btnFav);
-        btn1.setOnClickListener(new View.OnClickListener() {
+        btnAll = (Button)findViewById(R.id.btnAll);
+        btnFav = (Button)findViewById(R.id.btnFav);
+        btnLunch= (Button)findViewById(R.id.btnLunch);
+        btnDinner = (Button)findViewById(R.id.btnDinner);
+        btnDessert = (Button)findViewById(R.id.btnDessert);
+        btnAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 fm.popBackStack();
-                ListFragment f1 = new MyListFragment();
+                ListFragment f = new MyListFragment();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.addToBackStack(null);
-                ft.replace(R.id.contentFragment, f1);
+                ft.replace(R.id.contentFragment, f);
                 ft.commit();
                 fm.executePendingTransactions();
-                System.out.println(fm.getBackStackEntryCount() + "backkustackku");
             }
         });
 
-        btn2.setOnClickListener(new View.OnClickListener() {
+        btnFav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // prevent fragments from stacking
                 fm.popBackStack();
-                ListFragment f2 = new FavListFragment();
+                ListFragment f = new FavListFragment();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.addToBackStack(null);
-                ft.replace(R.id.contentFragment, f2);
+                ft.replace(R.id.contentFragment, f);
                 ft.commit();
                 fm.executePendingTransactions();
                 System.out.println(fm.getBackStackEntryCount());
             }
         });
+        btnLunch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // prevent fragments from stacking
+                fm.popBackStack();
+                ListFragment f = new LunchListFragment();
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.addToBackStack(null);
+                ft.replace(R.id.contentFragment, f);
+                ft.commit();
+                fm.executePendingTransactions();
+            }
+        });
+        btnDinner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // prevent fragments from stacking
+                fm.popBackStack();
+                ListFragment f = new DinnerListFragment();
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.addToBackStack(null);
+                ft.replace(R.id.contentFragment, f);
+                ft.commit();
+                fm.executePendingTransactions();
+            }
+        });
+        btnDessert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // prevent fragments from stacking
+                fm.popBackStack();
+                ListFragment f = new DessertListFragment();
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.addToBackStack(null);
+                ft.replace(R.id.contentFragment, f);
+                ft.commit();
+                fm.executePendingTransactions();
+            }
+        });
+        db.close();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
     @Override
     protected void onStop() {
@@ -101,5 +120,28 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+    }
+
+    @Override
+    // Prompt if user want to exit app.
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Er du sikker på du vil avslutte?")
+                .setCancelable(false)
+                .setPositiveButton("Ja",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int i) {
+                                // destroy activity - keep state
+                                finish();
+                            }
+                        })
+                .setNegativeButton("Nei", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface d, int i) {
+                        // dismiss dialog
+                        d.dismiss();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 }

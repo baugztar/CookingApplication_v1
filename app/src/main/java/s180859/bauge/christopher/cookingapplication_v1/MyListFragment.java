@@ -42,14 +42,14 @@ public class MyListFragment extends ListFragment{
             System.out.println(db.isNotUpdated());
             for (Recipe r:l)
             {
-                if(db.isNotUpdated()<l.size()){
+                if(db.isNotUpdated()<r.getId()){
+                    Log.d("Legger til:","ID:"+r.getId()+"-"+r.getName());
                     db.addRecipe(r);
                 }
             }
         }
         db.close();
     }
-
 
     public void populateFavs(List<Recipe> l){
         DBHandler db = new DBHandler(getActivity());
@@ -74,10 +74,9 @@ public class MyListFragment extends ListFragment{
     public void createView(){
         JSONHandler js = new JSONHandler(getActivity());
         List<Recipe> ls = js.getAllReceipts();
-        populateFavs(ls);
         startDb(ls);
+        populateFavs(ls);
         final MyListAdapter mList = new MyListAdapter(getActivity(),ls);
-        Log.d("SIZZEEE", "" + mList.getCount());
         setListAdapter(mList);
         search = (EditText)getActivity().findViewById(R.id.searchyo);
         search.addTextChangedListener(new TextWatcher() {

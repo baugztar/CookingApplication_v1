@@ -16,11 +16,11 @@ public class DBHandler extends SQLiteOpenHelper {
 
     static String TABLE_FAVORITES = "Favorites";
     static String KEY_ID = "_ID";
+    // JSON Id to correspond in DB.
     static String KEY_JSON = "Jsonid";
     static String KEY_FAV = "Favorite";
     static int DATABASE_VERSION = 1;
-    static String DATABASE_NAME ="Best_DB";
-    static String DELETE_TABLE = "DROP TABLE IF EXISTS favorites";
+    static String DATABASE_NAME ="DBLOL";
     public DBHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
@@ -86,8 +86,6 @@ public class DBHandler extends SQLiteOpenHelper {
         return fav;
         }
 
-
-
     public void updateRecipe(Recipe r){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -99,7 +97,6 @@ public class DBHandler extends SQLiteOpenHelper {
         else{
             values.put(KEY_FAV, fav);
         }
-        System.out.println(fav+"--TEST3");
         db.update(TABLE_FAVORITES,values,"Jsonid = ?", new String[]{String.valueOf(r.getId())});
         db.close();
     }

@@ -57,19 +57,16 @@ public class JSONHandler extends AppCompatActivity {
         } catch(JSONException je){
             je.printStackTrace();
         }
-        System.out.println("LENGDE:"+j.length());
         try{
             for (int i = 0; i < ar.length(); i++) {
                 Recipe r = new Recipe();
-                //Hele Json array
+                //Get JSON Array
                 JSONArray innerJsonArray = j.getJSONArray("recipe");
-
-                // Henter hvert objekt i recipe
+                // Get each object in outer array
                 JSONObject jsonObject = innerJsonArray.getJSONObject(i);
-
                 // Get ingredients
                 JSONObject ingred = jsonObject.getJSONObject("ingredients");
-                // Getting containz and putting in array
+                // Getting contains and putting in array
                 JSONArray innerJsonArrayCont = ingred.getJSONArray("contains");
                 String[] containz = new String[innerJsonArrayCont.length()];
                 for(int l = 0; l<containz.length;l++){
@@ -86,34 +83,27 @@ public class JSONHandler extends AppCompatActivity {
                     JSONObject newO = innerJsonArrayAmount.getJSONObject(k);
                     amount[k] = newO.getString("amo");
                 }
-
+                // Get id
                 r.setId(jsonObject.getInt("id"));
+                // Get amount
                 r.setAmount(amount);
                 r.setImg(jsonObject.getString("img"));
                 // Get portions
                 r.setPortions(jsonObject.getString("portions"));
                 // Get cooktime
                 r.setCooktime(jsonObject.getString("cooktime"));
-
+                // Get type
                 r.setType(jsonObject.getString("type"));
-
                 // Get name
                 r.setName(jsonObject.getString("name"));
-
                 // Get description
                 r.setDescription(jsonObject.getString("description"));
-
                 // Get difficulty
                 r.setDifficulty(jsonObject.getString("difficulty"));
-
                 // Get image for recipe page
                 r.setRecipeimg(jsonObject.getString("img2"));
-
                 // Get Containsarray
                 r.setContains(containz);
-
-
-
                 // Add receipt to list
                 rList.add(r);
             }

@@ -13,7 +13,6 @@
           {"ing":"Poteter"},
           {"ing":"Salt"}
         ],
-
         "amount":[
           {"amo":"200 g"},
           {"amo":"4 stk"},
@@ -21,7 +20,6 @@
         ]
       },
       "difficulty": "Lett",
-      "category": "Sunn",
       "cooktime": "20",
       "description":"1. Skrell poteter og kok opp i lettsaltet vann.\n2. Stek sild på middels varme i smør eller olje.\n3. Server gjerne med dill og en god saus."
     },
@@ -39,7 +37,6 @@
           {"ing":"Kaffe"},
           {"ing":"Egg"}
         ],
-
         "amount":[
           {"amo":"100g"},
           {"amo":"2stk"},
@@ -48,7 +45,6 @@
         ]
       },
       "difficulty": "Lett",
-      "category": "rask",
       "cooktime": "15",
       "description":"Hiv litt reker i en bolle med salat, good to go"
     },
@@ -101,7 +97,6 @@
         ]
       },
       "difficulty": "Avansert",
-      "category": "sterk",
       "cooktime": "20",
       "description": "1. Del tomat i to og skrap ut frøene med en teskje. Skjær tomatene i små terninger,\n2. Skrell agurk. Del agurken i to på langs og skrap ut kjernen med en teskje. Rens paprika og ananas.\n3. Skjær agurk, paprika og ananas i små terninger.\n4. Bland inn basilikum, limesaft og olje. Smak til med salt og pepper og sett salsaen kaldt til den skal brukes."
     },
@@ -128,7 +123,6 @@
         ]
       },
       "difficulty": "Lett",
-      "category": "salat",
       "cooktime": "20",
       "description":"1. Skrell epler og kutt i biter\n2. Kutt løk, og tomater og legg i bolle \n3. Legg alt i bolle og bland godt. "
     },
@@ -155,7 +149,6 @@
         ]
       },
       "difficulty": "Lett",
-      "category": "salat",
       "cooktime": "20",
       "description":"1. Skrell epler og kutt i biter\n2. Kutt løk, og tomater og legg i bolle \n3. Legg alt i bolle og bland godt. "},
     {
@@ -181,8 +174,166 @@
         ]
       },
       "difficulty": "Lett",
-      "category": "salat",
       "cooktime": "20",
-      "description":"1. Skrell epler og kutt i biter\n2. Kutt løk, og tomater og legg i bolle \n3. Legg alt i bolle og bland godt. "}
+      "description":"1. Skrell epler og kutt i biter\n2. Kutt løk, og tomater og legg i bolle \n3. Legg alt i bolle og bland godt. "},
+    {
+      "id":7,
+      "name": "Sjokoladepudding med vaniljesaus",
+      "img":"pizza",
+      "img2":"sildpotet",
+      "type": "Dessert",
+      "portions": "2",
+      "ingredients": {
+        "contains": [
+          {"ing":"Gelatinplater"},
+          {"ing":"Melk"},
+          {"ing":"Kremfløte"},
+          {"ing":"Sukker"},
+          {"ing":"Sjokolade"}
+        ],
+
+        "amount":[
+          {"amo":"5 stk"},
+          {"amo":"3 dl"},
+          {"amo":"3 dl"},
+          {"amo":"1 dl"},
+          {"amo":"200 g"}
+        ]
+      },
+      "difficulty": "Middels",
+      "cooktime": "20",
+      "description":"1. Bløtlegg gelatin i kaldt vann i 5 minutter. Kok opp melk, fløte og sukker under omrøring til sukkeret er oppløst.\n2. Ta kjelen av varmen og rør inn hakket sjokolade til smeltet. Klem vannet ut av gelatinen og rør ut i sjokoladeblandingen til en glatt røre. \n3. Hell over i en stor form og la stå i kjøleskapet til stiv, ca. 2 timer. Server med vaniljesaus, pisket krem og bær. "},
+    {
+      "id":8,
+      "name": "Pitapizza",
+      "img":"pizza",
+      "img2":"sildpotet",
+      "type": "Middag",
+      "portions": "4",
+      "ingredients": {
+        "contains": [
+          {"ing":"Pitabrød"},
+          {"ing":"Tomatsaus"},
+          {"ing":"Kokt skinke"},
+          {"ing":"Vårløk"},
+          {"ing":"Revet ost"},
+          {"ing":"Tørket oregano"}
+        ],
+
+        "amount":[
+          {"amo":"4 stk"},
+          {"amo":"3 dl"},
+          {"amo":"100 gr"},
+          {"amo":"1 stk"},
+          {"amo":"200 gr"},
+          {"amo":"2 ts"}
+        ]
+      },
+      "difficulty": "Lett",
+      "cooktime": "25",
+      "description":"1. Del pitabrødene på langs og legg på stekebrett.\n 2. Smør på tomatsaus og fordel skinke og hakket vårløk.\n3. Dryss over ost og oregano.\n4. Stek til ost har gyllen farge."},
+    {
+      "id":9,
+      "name": "Rekehest",
+      "img":"pizza",
+      "img2":"sildpotet",
+      "type": "Lunsj",
+      "portions": "2",
+      "ingredients": {
+        "contains": [
+          {"ing":"Eple"},
+          {"ing":"Salat"},
+          {"ing":"Tomat"},
+          {"ing":"Rødløk"}
+        ],
+
+        "amount":[
+          {"amo":"4 stk"},
+          {"amo":"200g"},
+          {"amo":"3stk"},
+          {"amo":"1/2 stk"}
+        ]
+      },
+      "difficulty": "Lett",
+      "cooktime": "20",
+      "description":"1. Skrell epler og kutt i biter\n2. Kutt løk, og tomater og legg i bolle \n3. Legg alt i bolle og bland godt. "},
+    {
+      "id":10,
+      "name": "Eggerøre",
+      "img":"pizza",
+      "img2":"sildpotet",
+      "type": "Lunsj",
+      "portions": "2",
+      "ingredients": {
+        "contains": [
+          {"ing":"Eple"},
+          {"ing":"Salat"},
+          {"ing":"Tomat"},
+          {"ing":"Rødløk"}
+        ],
+
+        "amount":[
+          {"amo":"4 stk"},
+          {"amo":"200g"},
+          {"amo":"3stk"},
+          {"amo":"1/2 stk"}
+        ]
+      },
+      "difficulty": "Lett",
+      "cooktime": "20",
+      "description":"1. Skrell epler og kutt i biter\n2. Kutt løk, og tomater og legg i bolle \n3. Legg alt i bolle og bland godt. "
+    },
+    {
+      "id":11,
+      "name": "Kalveskruer",
+      "img":"pizza",
+      "img2":"sildpotet",
+      "type": "Lunsj",
+      "portions": "2",
+      "ingredients": {
+        "contains": [
+          {"ing":"Eple"},
+          {"ing":"Salat"},
+          {"ing":"Tomat"},
+          {"ing":"Rødløk"}
+        ],
+
+        "amount":[
+          {"amo":"4 stk"},
+          {"amo":"200g"},
+          {"amo":"3stk"},
+          {"amo":"1/2 stk"}
+        ]
+      },
+      "difficulty": "Lett",
+      "cooktime": "20",
+      "description":"1. Skrell epler og kutt i biter\n2. Kutt løk, og tomater og legg i bolle \n3. Legg alt i bolle og bland godt. "
+    },
+    {
+      "id":12,
+      "name": "eggelol",
+      "img":"pizza",
+      "img2":"sildpotet",
+      "type": "Lunsj",
+      "portions": "2",
+      "ingredients": {
+        "contains": [
+          {"ing":"Eple"},
+          {"ing":"Salat"},
+          {"ing":"Tomat"},
+          {"ing":"Rødløk"}
+        ],
+
+        "amount":[
+          {"amo":"4 stk"},
+          {"amo":"200g"},
+          {"amo":"3stk"},
+          {"amo":"1/2 stk"}
+        ]
+      },
+      "difficulty": "Lett",
+      "cooktime": "20",
+      "description":"1. Skrell epler og kutt i biter\n2. Kutt løk, og tomater og legg i bolle \n3. Legg alt i bolle og bland godt. "
+    }
   ]
 }

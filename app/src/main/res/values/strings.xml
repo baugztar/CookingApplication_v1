@@ -3,5 +3,8 @@
     <string name="action_settings">Innstillinger</string>
     <string name="search">Søk i oppskrifter</string>
     <string name="tabAll">Alle</string>
+    <string name="tabDinner">Middag</string>
     <string name="tabFav">Favoritter</string>
+    <string name="tabLunch">Lunsj</string>
+    <string name="tabDessert">Dessert</string>
 </resources>
