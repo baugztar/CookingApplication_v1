@@ -71,8 +71,10 @@ public class MyListAdapter extends BaseAdapter {
 
         holder.name = (TextView)view.findViewById(R.id.listItem_name);
         holder.difficulty = (TextView)view.findViewById(R.id.listItem_diff);
+        holder.cooktime = (TextView)view.findViewById(R.id.listItem_time);
         holder.avatar = (ImageView)view.findViewById(R.id.listItem_img);
         holder.favIcon = (ImageView)view.findViewById(R.id.favIcon);
+
 
         final Recipe r = mRecipes.get(position);
         int imgR = view.getResources().getIdentifier(r.getImg(), "drawable", getPackageName(view.getContext()));
@@ -100,6 +102,7 @@ public class MyListAdapter extends BaseAdapter {
         holder.rel = (RelativeLayout) view.findViewById(R.id.itemyo);
         holder.difficulty.setText(r.getDifficulty());
         holder.name.setText(r.getName());
+        holder.cooktime.setText(r.getCooktime()+" minutter");
         holder.rel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -111,7 +114,7 @@ public class MyListAdapter extends BaseAdapter {
 
 
     private static class ViewHolder{
-        protected TextView name, difficulty;
+        protected TextView name, difficulty, cooktime;
         protected ImageView avatar, favIcon;
         protected RelativeLayout rel;
     }
@@ -127,7 +130,7 @@ public class MyListAdapter extends BaseAdapter {
         b.putString("cooktime", r2.getCooktime());
         b.putString("image",r2.getRecipeimg());
         b.putString("portions",r2.getPortions());
-        b.putString("type",r2.getType());
+        b.putString("type", r2.getType());
         b.putInt("id", r2.getId());
         b.putBoolean("fav", r2.isFavorite());
         i.putExtras(b);
@@ -141,9 +144,9 @@ public class MyListAdapter extends BaseAdapter {
     public void filter(String inText) {
         // Text to lowercase for testing purposes.
         inText = inText.toLowerCase(Locale.getDefault());
-        // clear list
+        // Clear list
         mRecipes.clear();
-        // if searchfield empty, add entire list.
+        // If searchfield empty, add entire list.
         if (inText.length() == 0) {
             mRecipes.addAll(arraylist);
         } else {

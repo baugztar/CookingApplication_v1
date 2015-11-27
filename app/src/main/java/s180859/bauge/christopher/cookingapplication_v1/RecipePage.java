@@ -21,7 +21,7 @@ import java.util.List;
  */
 public class RecipePage extends AppCompatActivity {
 
-    String name, desc,type,portions;
+    String name, desc,type,portions,recipeImg;
     String[] ingrArr, amoArr;
     int id;
     public RecipePage() {
@@ -43,7 +43,8 @@ public class RecipePage extends AppCompatActivity {
         TextView outDiv = (TextView) findViewById(R.id.recipe_div);
         final ImageView favIcon = (ImageView) findViewById(R.id.favIconToggle);
         ImageView image = (ImageView)findViewById(R.id.recipe_image);
-        int img = getResources().getIdentifier("sildpotet", "drawable", getPackageName());
+        recipeImg = b.getString("image");
+        int img = getResources().getIdentifier(recipeImg, "drawable", getPackageName());
         image.setImageResource(img);
         id = b.getInt("id");
         r.setId(id);
@@ -57,7 +58,7 @@ public class RecipePage extends AppCompatActivity {
         desc = b.getString("desc");
         ingrArr = b.getStringArray("contains");
         amoArr = b.getStringArray("amount");
-        String outputDiv = "Type: "+type+"\nPortions: "+portions;
+        String outputDiv = ""+type+"\nPorsjoner: "+portions;
         outDiv.setText(outputDiv);
         outName.setText(name);
         outDesc.setText(desc);
@@ -106,10 +107,10 @@ public class RecipePage extends AppCompatActivity {
             }
         });
     }
-
+    // Outputformating for ingredients
     private String formatContainsAndAmount(String[] arrIng, String[] arrAmo) {
         int i = 0;
-        String out = "Ingredients:\n";
+        String out = "Ingredienser:\n";
         while (i < arrIng.length && i < arrAmo.length) {
             out += arrAmo[i] + " " + arrIng[i] + "\n";
             i++;
@@ -117,6 +118,7 @@ public class RecipePage extends AppCompatActivity {
         return out;
     }
 
+    // Method for drawing favorite icon when true/false
     public void drawFav(Recipe r, ImageView favIcon) {
         int imgFav;
         if (r.isFavorite()) {
@@ -126,5 +128,7 @@ public class RecipePage extends AppCompatActivity {
         }
         favIcon.setImageResource(imgFav);
     }
+
+
 
 }

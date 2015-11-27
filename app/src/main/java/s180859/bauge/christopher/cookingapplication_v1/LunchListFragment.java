@@ -93,7 +93,6 @@ public class LunchListFragment extends ListFragment {
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Clear inputfield
                 clearSearchField();
             }
         });
@@ -103,7 +102,7 @@ public class LunchListFragment extends ListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return super.onCreateView(inflater, container, savedInstanceState);
     }
-
+    // Clear inputfield for search
     public void clearSearchField(){
         search = (EditText)getActivity().findViewById(R.id.searchyo);
         search.setText("");

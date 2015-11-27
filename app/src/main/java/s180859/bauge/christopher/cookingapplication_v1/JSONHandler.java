@@ -25,7 +25,6 @@ public class JSONHandler extends AppCompatActivity {
 
     public JSONObject getJson(){
         JSONObject js;
-
         try{
             InputStream is = c.getAssets().open("test2.json");
             int size = is.available();

@@ -3,7 +3,7 @@
     {
       "id":1,
       "name": "Sild og Poteter",
-      "img":"citrus2",
+      "img":"fish",
       "img2":"sildpotet",
       "portions": "2",
       "type" : "Middag",
@@ -27,33 +27,37 @@
       "id":2,
       "name": "Rekesalat",
       "type": "Lunsj",
-      "img2":"sildpotet",
-      "img":"citrus2",
-      "portions": "2",
+      "img":"shrimp",
+      "img2":"shrimpsalad",
+      "portions": "4",
       "ingredients": {
         "contains": [
           {"ing":"Reker"},
-          {"ing":"Salat"},
-          {"ing":"Kaffe"},
-          {"ing":"Egg"}
+          {"ing":"Majones"},
+          {"ing":"Selleri"},
+          {"ing":"Løk"},
+          {"ing":"Sitron"},
+          {"ing":"Worchestershire saus"}
         ],
         "amount":[
-          {"amo":"100g"},
-          {"amo":"2stk"},
-          {"amo":"3dl"},
-          {"amo":"4stk"}
+          {"amo":"400 g"},
+          {"amo":"2 stk"},
+          {"amo":"1 stk"},
+          {"amo":"1 stk"},
+          {"amo":"1 teskje"},
+          {"amo":"Noen dråper"}
         ]
       },
       "difficulty": "Lett",
       "cooktime": "15",
-      "description":"Hiv litt reker i en bolle med salat, good to go"
+      "description":"1. Del reker i to.\n2. Kutt grønnsaker og legg i bolle\n3. Legg alt i en bolle og kjøl en times tid før servering."
     },
     {
       "id":3,
       "name": "Salsa",
-      "img2":"sildpotet",
-      "img":"citrus2",
-      "type": "Lunsj",
+      "img2":"salsa",
+      "img":"taco",
+      "type": "Dinner",
       "portions": "2",
       "ingredients": {
         "contains": [
@@ -96,91 +100,96 @@
           {"amo": "1/4 ts"}
         ]
       },
-      "difficulty": "Avansert",
+      "difficulty": "Middels",
       "cooktime": "20",
       "description": "1. Del tomat i to og skrap ut frøene med en teskje. Skjær tomatene i små terninger,\n2. Skrell agurk. Del agurken i to på langs og skrap ut kjernen med en teskje. Rens paprika og ananas.\n3. Skjær agurk, paprika og ananas i små terninger.\n4. Bland inn basilikum, limesaft og olje. Smak til med salt og pepper og sett salsaen kaldt til den skal brukes."
     },
     {
       "id":4,
-      "name": "Eplesalat",
-      "img":"pizza",
-      "img2":"sildpotet",
-      "type": "Lunsj",
-      "portions": "2",
+      "name": "Kyllingfilet med Cheddar",
+      "img":"chicken",
+      "img2":"chickencheddar",
+      "type": "Middag",
+      "portions": "4",
       "ingredients": {
         "contains": [
-          {"ing":"Eple"},
-          {"ing":"Salat"},
-          {"ing":"Tomat"},
-          {"ing":"Rødløk"}
+          {"ing":"Kyllingfilet"},
+          {"ing":"Bacon"},
+          {"ing":"Revet cheddar"},
+          {"ing":"Vårløk"},
+          {"ing":"Barbequesaus"}
         ],
 
         "amount":[
           {"amo":"4 stk"},
-          {"amo":"200g"},
-          {"amo":"3stk"},
-          {"amo":"1/2 stk"}
+          {"amo":"150 g"},
+          {"amo":"1 kopp"},
+          {"amo":"3 stk"},
+          {"amo":"1 kopp"}
         ]
       },
       "difficulty": "Lett",
       "cooktime": "20",
-      "description":"1. Skrell epler og kutt i biter\n2. Kutt løk, og tomater og legg i bolle \n3. Legg alt i bolle og bland godt. "
+      "description":"1. Mariner kyllingfilet i Barbequesaus\n2. Kutt løk, og tomater og legg i bolle \n3. Legg alt i bolle og bland godt. "
     },
     {
       "id":5,
-      "name": "Kakesalat",
-      "img":"pizza",
-      "img2":"sildpotet",
+      "name": "Søndagsomelett",
+      "img":"eggs",
+      "img2":"omelett",
       "type": "Lunsj",
-      "portions": "2",
+      "portions": "4",
       "ingredients": {
         "contains": [
-          {"ing":"Eple"},
-          {"ing":"Salat"},
-          {"ing":"Tomat"},
+          {"ing":"Egg"},
+          {"ing":"Kruspersille"},
+          {"ing":"Bacon"},
+          {"ing":"Cheddarost"},
           {"ing":"Rødløk"}
         ],
-
         "amount":[
-          {"amo":"4 stk"},
-          {"amo":"200g"},
-          {"amo":"3stk"},
+          {"amo":"12 stk"},
+          {"amo":"En liten neve"},
+          {"amo":"250 g"},
+          {"amo":"250 g"},
           {"amo":"1/2 stk"}
         ]
       },
-      "difficulty": "Lett",
+      "difficulty": "Middels",
       "cooktime": "20",
-      "description":"1. Skrell epler og kutt i biter\n2. Kutt løk, og tomater og legg i bolle \n3. Legg alt i bolle og bland godt. "},
+      "description":"1. Ha eggene i en bolle med persille.\n2. Stek cirka en fjerdedel av eggene på medium til lav varme. \n3. Legg en fjerdedel av bacon og ost på den ene halvdelen av eggene.\n4. Vend halvparten av eggsiden og press lett. Stekes i ca 2 minutter."},
     {
       "id":6,
-      "name": "Rekepai",
-      "img":"pizza",
-      "img2":"sildpotet",
+      "name": "Aspargessuppe",
+      "img":"cookingpot",
+      "img2":"aspargussoup",
       "type": "Lunsj",
-      "portions": "2",
+      "portions": "6",
       "ingredients": {
         "contains": [
-          {"ing":"Eple"},
-          {"ing":"Salat"},
-          {"ing":"Tomat"},
-          {"ing":"Rødløk"}
+          {"ing":"Asparges"},
+          {"ing":"Melk"},
+          {"ing":"Smør"},
+          {"ing":"Mel"},
+          {"ing":"Kyllingbuljong"}
         ],
 
         "amount":[
-          {"amo":"4 stk"},
-          {"amo":"200g"},
-          {"amo":"3stk"},
-          {"amo":"1/2 stk"}
+          {"amo":"ca 1 kg"},
+          {"amo":"ca 1 liter"},
+          {"amo":"2 spiseskjeer"},
+          {"amo":"2 spiseskjeer"},
+          {"amo":"2 terninger"}
         ]
       },
       "difficulty": "Lett",
-      "cooktime": "20",
-      "description":"1. Skrell epler og kutt i biter\n2. Kutt løk, og tomater og legg i bolle \n3. Legg alt i bolle og bland godt. "},
+      "cooktime": "15",
+      "description":"1. Rens asparges og legg i kjele med melk.\n2. Knus buljongterning og kok opp vann.\n3. Trekk asparges i 10-15 minutter til de er myke.\n4. Smelt smør, ha i mel og kok opp sammen med suppen."},
     {
       "id":7,
       "name": "Sjokoladepudding med vaniljesaus",
-      "img":"pizza",
-      "img2":"sildpotet",
+      "img":"icecream",
+      "img2":"puddingchoc",
       "type": "Dessert",
       "portions": "2",
       "ingredients": {
@@ -202,12 +211,12 @@
       },
       "difficulty": "Middels",
       "cooktime": "20",
-      "description":"1. Bløtlegg gelatin i kaldt vann i 5 minutter. Kok opp melk, fløte og sukker under omrøring til sukkeret er oppløst.\n2. Ta kjelen av varmen og rør inn hakket sjokolade til smeltet. Klem vannet ut av gelatinen og rør ut i sjokoladeblandingen til en glatt røre. \n3. Hell over i en stor form og la stå i kjøleskapet til stiv, ca. 2 timer. Server med vaniljesaus, pisket krem og bær. "},
+      "description":"1. Legg gelatin i kjølig vann i ca 5 minutter. Kok opp melk, fløte og sukker og rør til sukkeret er oppløst.\n2. Ta av kjele og rør inn hakket sjokolade til smeltet. Klem vannet ut av gelatinen og rør ut i sjokoladeblandingen til en glatt røre. \n3. Hell over i passende form og la stå i kjøleskapet til stiv. Server med vaniljesaus og bær."},
     {
       "id":8,
       "name": "Pitapizza",
       "img":"pizza",
-      "img2":"sildpotet",
+      "img2":"pitapizza",
       "type": "Middag",
       "portions": "4",
       "ingredients": {
@@ -234,106 +243,123 @@
       "description":"1. Del pitabrødene på langs og legg på stekebrett.\n 2. Smør på tomatsaus og fordel skinke og hakket vårløk.\n3. Dryss over ost og oregano.\n4. Stek til ost har gyllen farge."},
     {
       "id":9,
-      "name": "Rekehest",
-      "img":"pizza",
-      "img2":"sildpotet",
-      "type": "Lunsj",
-      "portions": "2",
+      "name": "Vaniljemuffins",
+      "img":"cupcake",
+      "img2":"cupcakes",
+      "type": "Dessert",
+      "portions": "ca 24 stk",
       "ingredients": {
         "contains": [
-          {"ing":"Eple"},
-          {"ing":"Salat"},
-          {"ing":"Tomat"},
-          {"ing":"Rødløk"}
+          {"ing":"Mel"},
+          {"ing":"Usaltet smør"},
+          {"ing":"Sukker"},
+          {"ing":"Romtempererte egg"},
+          {"ing":"Melk"},
+          {"ing":"Vaniljeekstrakt"}
         ],
 
         "amount":[
+          {"amo":"4 dl"},
+          {"amo":"125 gram"},
+          {"amo":"300 gram"},
           {"amo":"4 stk"},
-          {"amo":"200g"},
-          {"amo":"3stk"},
-          {"amo":"1/2 stk"}
+          {"amo":"2.5 dl"},
+          {"amo":"1 teskje"}
         ]
       },
-      "difficulty": "Lett",
-      "cooktime": "20",
-      "description":"1. Skrell epler og kutt i biter\n2. Kutt løk, og tomater og legg i bolle \n3. Legg alt i bolle og bland godt. "},
+      "difficulty": "Vanskelig",
+      "cooktime": "40",
+      "description":"1. Ha mel i bolle.\n2. Krem smør med en mixer og ha i sukker samtidig.\n3. Ha i ett og ett egg og bland godt.\n4. Ha i de tørre varene og melk og vaniljeekstrakt vekselsvis.\n5. Fyll muffinsformer og stek i ovn 20-25 minutter. La kjøle før servering. "},
     {
       "id":10,
-      "name": "Eggerøre",
-      "img":"pizza",
-      "img2":"sildpotet",
-      "type": "Lunsj",
-      "portions": "2",
+      "name": "Spenstig hamburger",
+      "img":"hamburger",
+      "img2":"burger2",
+      "type": "Dinner",
+      "portions": "",
       "ingredients": {
         "contains": [
-          {"ing":"Eple"},
-          {"ing":"Salat"},
-          {"ing":"Tomat"},
-          {"ing":"Rødløk"}
+          {"ing":"Karbonadedeig"},
+          {"ing":"Rødløk"},
+          {"ing":"Hvitløk"},
+          {"ing":"Worchestershiresaus"},
+          {"ing":"Havsalt"},
+          {"ing":"Sort pepper"}
         ],
 
         "amount":[
-          {"amo":"4 stk"},
-          {"amo":"200g"},
-          {"amo":"3stk"},
-          {"amo":"1/2 stk"}
+          {"amo":"1 kg"},
+          {"amo":"1/4 stk"},
+          {"amo":"2 fedd"},
+          {"amo":"1/2 stk"},
+          {"amo":"1 klype"},
+          {"amo":"1 klype"}
         ]
       },
-      "difficulty": "Lett",
-      "cooktime": "20",
-      "description":"1. Skrell epler og kutt i biter\n2. Kutt løk, og tomater og legg i bolle \n3. Legg alt i bolle og bland godt. "
+      "difficulty": "Middels",
+      "cooktime": "15",
+      "description":"1. Bland alle ingredienser sammen i en bolle\n2. Kna i passende burgerformede klumper \n3. Server i brød med salat, tomat og dressing "
     },
     {
       "id":11,
-      "name": "Kalveskruer",
-      "img":"pizza",
-      "img2":"sildpotet",
+      "name": "Veganske pannekaker",
+      "img":"vegan",
+      "img2":"veganpancakes",
       "type": "Lunsj",
       "portions": "2",
       "ingredients": {
         "contains": [
-          {"ing":"Eple"},
-          {"ing":"Salat"},
-          {"ing":"Tomat"},
-          {"ing":"Rødløk"}
+          {"ing":"Mel"},
+          {"ing":"Sukker"},
+          {"ing":"Bakepulver"},
+          {"ing":"Salt"},
+          {"ing":"Soyamelk"},
+          {"ing":"Vegetabilsk olje"}
         ],
 
         "amount":[
-          {"amo":"4 stk"},
-          {"amo":"200g"},
-          {"amo":"3stk"},
-          {"amo":"1/2 stk"}
+          {"amo":"2.5 dl"},
+          {"amo":"1 spiseskje"},
+          {"amo":"2 spiseskjeer"},
+          {"amo":"1/8 teskje"},
+          {"amo":"2 dl"},
+          {"amo":"2 spiseskjeer"}
         ]
       },
       "difficulty": "Lett",
-      "cooktime": "20",
-      "description":"1. Skrell epler og kutt i biter\n2. Kutt løk, og tomater og legg i bolle \n3. Legg alt i bolle og bland godt. "
+      "cooktime": "15",
+      "description":"1. Bland mel, bakepulver, sukker og salt i en bolle.\n2. Bland i soyamelk og olje, og miks til en glatt røre. \n3. Stek på middels varme og snu kakene når de bobler."
     },
     {
       "id":12,
-      "name": "eggelol",
-      "img":"pizza",
-      "img2":"sildpotet",
+      "name": "Pasta Carbonara",
+      "img":"spaghoot",
+      "img2":"veganpancakes",
       "type": "Lunsj",
-      "portions": "2",
+      "portions": "4",
       "ingredients": {
         "contains": [
-          {"ing":"Eple"},
-          {"ing":"Salat"},
-          {"ing":"Tomat"},
-          {"ing":"Rødløk"}
+          {"ing":"Farfalle pasta"},
+          {"ing":"Egg"},
+          {"ing":"Creme Fraiche"},
+          {"ing":"Pancetta"},
+          {"ing":"Erter"},
+          {"ing":"Mynte"},
+          {"ing":"Parmesan"}
         ],
-
         "amount":[
-          {"amo":"4 stk"},
-          {"amo":"200g"},
-          {"amo":"3stk"},
-          {"amo":"1/2 stk"}
+          {"amo":"450 g"},
+          {"amo":"1 stk"},
+          {"amo":"100 g "},
+          {"amo":"12 stk skiver"},
+          {"amo":"250 gram"},
+          {"amo":"1 neve"},
+          {"ing":"50 gram revet"}
         ]
       },
-      "difficulty": "Lett",
-      "cooktime": "20",
-      "description":"1. Skrell epler og kutt i biter\n2. Kutt løk, og tomater og legg i bolle \n3. Legg alt i bolle og bland godt. "
+      "difficulty": "Middels",
+      "cooktime": "25",
+      "description":"1. Kok opp pasta som henvist i lettsaltet vann.\n2. Pisk egg med krem salt og pepper.\n3. Legg i erter når pasta har halvannet minutt igjen å koke.\n4. Legg pasta til pancettaen og rør inn mynte. \n5. Bland inn sammen med egg og krem i en stor varm bolle.\n6. Smak til med salt og pepper, og dryss over parmesan og mynte."
     }
   ]
 }

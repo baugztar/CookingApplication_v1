@@ -42,12 +42,10 @@ public class FavListFragment extends MyListFragment {
             int ok = db.getFavorite(r.getId()-1);
             if(ok == 0){
                 r.setFavorite(false);
-                System.out.println("prover");
             }
             else{
                 r.setFavorite(true);
                 r2.add(r);
-                System.out.println("proverhardt");
             }
         }
         db.close();
@@ -59,8 +57,6 @@ public class FavListFragment extends MyListFragment {
         List<Recipe> ls = js.getAllReceipts();
         rr = populateFavss(ls);
         final MyListAdapter mList = new MyListAdapter(getActivity(),rr);
-
-        Log.d("SIZZEEE",""+mList.getCount());
         setListAdapter(mList);
 
         search = (EditText)getActivity().findViewById(R.id.searchyo);
@@ -84,7 +80,6 @@ public class FavListFragment extends MyListFragment {
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Clear inputfield
                 clearSearchField();
             }
         });
@@ -94,7 +89,7 @@ public class FavListFragment extends MyListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return super.onCreateView(inflater, container, savedInstanceState);
     }
-
+    // Clear inputfield
     public void clearSearchField(){
         search = (EditText)getActivity().findViewById(R.id.searchyo);
         search.setText("");

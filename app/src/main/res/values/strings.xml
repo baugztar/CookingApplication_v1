@@ -7,4 +7,5 @@
     <string name="tabFav">Favoritter</string>
     <string name="tabLunch">Lunsj</string>
     <string name="tabDessert">Dessert</string>
+    <string name="imgPlaceholder">favorite icon</string>
 </resources>
